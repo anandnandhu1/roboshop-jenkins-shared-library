@@ -3,4 +3,10 @@ def new1() {
     def xyz="hello"
     print "abc = ${abc}"
     print "xyz = ${xyz}"
+
+    if (abc == "somedata") {
+        print "yes"
+    } else {
+        print "no"
+    }
 }
