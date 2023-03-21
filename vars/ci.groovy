@@ -25,7 +25,7 @@ def call() {
                 echo 'upload'
             }
         }
-    } catch(exception e) {
-        common.email("failed")
+    } catch(Exception e) {
+        common.email("Failed")
     }
 }
