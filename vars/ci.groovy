@@ -36,8 +36,8 @@ def call() {
                                 println "PAssword = ${SONAR_PASS}"
                                 sh "echo sh password = ${SONAR_PASS}"
                                 sh "sonar-scanner -Dsonar.host.url=http://172.31.11.39:9000 -Dsonar.login=${SONAR_USER} -Dsonar.password=${SONAR_PASS} -Dsonar.projectKey=cart"
-                          }
-                      }
+                            }
+                        }
 
                     }
                 }
