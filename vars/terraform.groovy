@@ -1,5 +1,6 @@
 def call() {
     pipeline {
+
         agent {
             node {
                 label 'workstation'
@@ -7,15 +8,19 @@ def call() {
         }
 
         parameters {
-            string(name: 'INFRA-ENV', defaultvalue: '', description: 'Enter Env like dev or prod')
+            string(name: 'INFRA_ENV', defaultValue: '', description: 'Enter Env like dev or prod')
         }
+
         stages {
-            stage('terrafoem init') {
+
+            stage('Terraform Init') {
                 steps {
-                    sh "terraform init -backend-config=env-${INFRA-ENV}/state.tfvars"
+                    sh "terraform init -backend-config=env-${INFRA_ENV}/state.tfvars"
                 }
             }
+
         }
+
 
     }
 }
