@@ -3,7 +3,7 @@ def compile() {
         sh 'npm install'
     }
     if (app_lang == "maven") {
-        sh "mvn package && cp target/${component}-1.0.jar ${component}.jar"
+        sh "mvn clean compile package"
     }
     sh "docker build -t 402826549768.dkr.ecr.us-east-1.amazonaws.com/${component}:${TAG_NAME} . "
 }
